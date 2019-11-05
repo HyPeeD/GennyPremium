@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="shortcut icon" href="https://cdn.discordapp.com/attachments/629738085952913418/637610727082950669/assa.png">
+<head>
+    <meta charset="UTF-8">
+    <title>Jenny Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Courgette&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lobster|Shadows+Into+Light&display=swap" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700i" rel="stylesheet">
+	 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Dosis:700&amp;subset=latin-ext" rel="stylesheet">
+	
+	
+    <style>
+    
+     * {
+  box-sizing: border-box;
+         margin: 0;
+         padding: 0;
+}
+html, body {
+  height: 100%;
+  overflow: hidden;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+.page {
+  height: 100%;
+  background-color: #584e4a;
+}
+.content {
+  height: 200%;
+  transform-origin: top left;
+  transition: transform 0.7s cubic-bezier(1, 0.005, 0.24, 1);
+  background-color: #f0f0f0;
+}
+.content_inner {
+  height: 50%;
+  overflow-y: auto;
+  padding: 50px 20%;
+}
+/* basically all styling from now on */
+.menu_toggle {
+  z-index: 900;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: block;
+  cursor: pointer;
+  width: 100px;
+  height: 80px;
+  background-color: #f37272;
+  border-bottom-right-radius: 100%;
+}
+.menu_toggle:active i {
+  opacity: 0.8;
+}
+.menu_toggle i {
+  color: #f0f0f0;
+}
+.menu_toggle .menu_open, .menu_toggle .menu_close {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -15px;
+  margin-left: -12px;
+  transition: transform 0.7s cubic-bezier(1, 0.005, 0.24, 1);
+}
+.menu_toggle .menu_open {
+  transform-origin: -100px -100px;
+}
+.menu_toggle .menu_close {
+  transform: rotate(20deg);
+  transform-origin: -100px -160px;
+}
+.menu_items {
+  position: fixed;
+  bottom: 0;
+  left: 50px;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.menu_items li {
+  height: 60px;
+  margin-bottom: 30px;
+  transform: translateX(-300px);
+  transition: transform 0.7s 0s cubic-bezier(1, 0.005, 0.24, 1);
+}
+.menu_items li:nth-child(2) {
+  margin-left: 40px;
+}
+.menu_items li:nth-child(3) {
+  margin-left: 80px;
+}
+.menu_items a {
+  display: block;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #a4a4a4;
+  transition: color 0.2s;
+}
+.menu_items a .icon {
+  position: relative;
+  display: inline-block;
+  margin-right: 25px;
+  color: #f0f0f0;
+}
+.menu_items a .icon:after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  content: '';
+  display: block;
+  width: 60px;
+  height: 60px;
+  margin-left: -33px;
+  margin-top: -32px;
+  border-radius: 100%;
+  border: 2px solid #f0f0f0;
+  transition: border-color 0.2s;
+}
+.menu_items a:hover {
+  color: #f0f0f0;
+}
+.menu_items a:hover .icon:after {
+  border-color: #f37272;
+}
+.menu_items a:active .icon {
+  color: #f37272;
+}
+/* Let's open up the menu */
+.shazam {
+  /*.content_inner {
+   height: 100%;
+   }*/
+}
+.shazam .content {
+  transform: rotate(-30deg);
+}
+.shazam .menu_open {
+  transform: rotate(-20deg);
+}
+.shazam .menu_close {
+  transform: rotate(0);
+}
+.shazam .menu_items li {
+  transform: translateX(0);
+  transition: transform 0.35s 0.45s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.shazam .menu_items li:nth-child(2) {
+  transition-delay: 0.47s;
+}
+.shazam .menu_items li:nth-child(3) {
+  transition-delay: 0.48s;
+}
+h1 {
+  padding-bottom: 15px;
+  border-bottom: 1px solid #ddd;
+}
+body {
+	background-image: url("latestt.gif");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+        .social i{
+            font-size: 20px;
+            background-color: #f37272;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            color: white;
+            border-radius: 50px;
+        }
+.text {
+	font-size: 30px;
+	line-height: 35px;
+	font-family: 'Modak', cursive;
+}
+.spam{
+    font-size: 80px;
+    line-height: 40px;
+    font-family: 'Shadows Into Light', cursive;
+}
+      html, body, #root {
+        color: bisque;
+    background-color: #222;
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        font-family: 'Dosis', sans-serif !important;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+     }
+    
+    </style>
+</head>
+<body>
+    <div class="page">
+  <span class="menu_toggle">
+    <i class="menu_open fa fa-bars fa-lg"></i>
+    <i class="menu_close fa fa-times fa-lg"></i>
+  </span>
+  <ul class="menu_items">
+    <li><a href="#"><i class="icon fa fa-home fa-2x"></i>Home</a></li>
+    <li><a href="https://discord.gg/Yjwxx44"><i class="icon fa fa-phone fa-2x"></i>Contact</a></li>
+    <li><a href="https://discordapp.com/oauth2/authorize?client_id=603988884694630430&scope=bot&permissions=2146958847"><i class="icon fa fa-heart fa-2x"></i>Add bot</a></li>
+  </ul>
+  <main class="content">
+    <div class="content_inner">
+      <h1 style="color: #303136">Welcome To Genny Website</h1>
+      <br><br><br> 
+      <div class="social">
+          <i class="fa fa-twitter"></i>
+          <i class="fa fa-github"></i>
+		  <i class="fa fa-twitch"></i>
+      </div>
+	  
+      <br><br>
+      <!-- <p style="color: #303136">This is<strong style="color: #ec10bb">Genny Website</strong> !<br></p> -->
+	  <p style="color: #303136">This is <strong style="color: #ec10bb">Genny Website</strong> !<br></p>
+	  <p style="color: #303136">Jenny is an awesome bot with Moderation, Games, Utility and more.</p><br>
+	  <p style="color: #303136">For any problems contact <strong style="color: #00bfff"><a href="https://twitter.com/xCutieePiee">https://twitter.com/xCutieePiee</a></strong>.</p>
+	  <p style="color: #303136">Support Server where u can ask for help or suggest : <strong style="color: #00bfff"><a href="https://discord.gg/mCyHDW">https://discord.gg/mCyHDW</a></strong>.</p>
+	  <p style="color: #303136">You can be a membership in our server <strong>υηđєг ωσгιđ</strong>.</p>
+	  <p style="color: #303136">If you are a programmer you contact me in Discord <strong>My ID "458997221170479124s"</strong> !</p>
+	  <br><br>
+	  <a><img src="https://cdn.glitch.com/2fb3120c-6774-4cbd-b7e1-d257d050f00f%2Fd75ghui-0d9affb3-da2f-49ce-b8de-0f6ca77e6ee2.gif?v=1572869750750"></a><br>
+	  		<center>
+			<br><br><br>
+		<h1 style="color: #020202" class="spam">Commands</h1>
+		<br><br>
+		
+  <body style="color: white;">
+  
+  <br/>
+  <br/>
+  <hr style="width: 25%; margin-top: -30px; background-color: white;">
+
+  <center>
+<br/>
+  <h class="text" style="color: #303136">- Public Commands 🌀</h>
+<br><br>
+  <p style="color: #584f4a" class="paragraph">
+  ✍ !!ping ➾   To know your ping <br/> <br/>
+  ✍ !!film ➾  For info about a film <br/> <br/>
+  ✍ !!invinfo ➾ For code invite info <br/> <br/>
+  ✍ !!avatar ➾ To see an avatar <br/> <br/>
+  ✍ !!report ➾ For report <br/> <br/>
+  ✍ !!id ➾ Some things about u or mentionned <br/> <br/>
+  ✍ !!emolist ➾ To see all emojis on the server <br/> <br/>
+  ✍ !!getScreenShareLink ➾ To share your screen <br/> <br/>
+  ✍ !!invites ➾ your server link <br/> <br/>
+  ✍ !!bot ➾ Bot info <br/> <br/>
+  ✍ !!purge ➾ To clear in chat <br/> <br/>
+  ✍ !!serverinfo ➾ For improved server info <br/> <br/>
+  ✍ !!user ➾ Usage !!user @mention <br/> <br/>
+  ✍ !!sugg ➾ To suggest any thing on server support</p>
+  
+  <br/>
+  <br/>
+  <hr style="width: 25%; margin-top: -30px; background-color: white;">
+  <br/>
+  <h class="text" style="color: #303136">- Admin Commands 🌀</h>
+  <br><br>
+  <p style="color: #584f4a"  class="paragraph">
+  ✍ !!mute ➾ For mute <br/> <br/>
+  ✍ !!unmute ➾ To remove the mute <br/> <br/>
+  ✍ !!vmute ➾ For Voice mute <br/> <br/>
+  ✍ !!vunmute ➾ To remove the voice mute <br/> <br/>
+  ✍ !!setnick ➾  To change nick to members <br/> <br/>
+  ✍ !!createcolores ➾ To create a lot colors <br/> <br/>
+  ✍ !!ban ➾ For ban <br/> <br/>
+  ✍ !!move ➾  For move <br/> <br/>
+  ✍ !!unbanall ➾ To remove ban for all <br/> <br/>
+  ✍ !!kick ➾  To kick members <br/> <br/>
+  ✍ !!unban ➾  To remove any ban <br/> <br/>
+  ✍ !!deafen ➾ To give deafen to a member <br/> <br/>
+  ✍ !!undeafen ➾ To remove the deafen</p>
+ 
+  <br/>
+  <br/>
+  <hr style="width: 25%; margin-top: -30px; background-color: white;">
+  
+  <center>
+  <br/>
+  <h class="text" style="color: #303136">- Particals Commands 🌀</h>
+<br><br>
+  <p style="color: #584f4a" class="paragraph">
+  ✍ !!steam [name]  ➾ To know info for a game <br/> <br/>
+  ✍ !!ascii ➾ To get an awesome ascii <br/> <br/>
+  ✍ !!coinflip ➾ For coinflip write / logo <br/> <br/>
+  ✍ !!hack ➾ To scare Any one xd <br/> <br/>
+  ✍ !!gcreate ➾ To create giveaway <br/> <br/>
+  ✍ !!remindme ➾ Rminder The bot will remind you.</p>
+   
+  <br/>
+  <br/>
+  <hr style="width: 25%; margin-top: -30px; background-color: white;">
+  
+  <center>
+  <br/>
+  <h class="text" style="color: #303136">- Music Commands 🌀</h>
+<br><br> 
+ <p style="color: #584f4a" class="paragraph">
+✍ !!play ➾  Play a song from YouTube. <br/> <br/>
+✍ !!skip ➾  Skip a song. <br/> <br/>
+✍ !!stop ➾  Stops the music. <br/> <br/>
+✍ !!volume ➾  Change the volume of the bot. <br/> <br/>
+✍ !!np ➾  The song that now playing. <br/> <br/>
+✍ !!queue ➾  See the queue of songs. <br/> <br/>
+✍ !!pause ➾  Pause the music. <br/> <br/>
+✍ !!resume ➾  Resume the music. <br/> <br/>
+✍ !!yt ➾  For a channel yt info. <br/> <br/>
+✍ !!join ➾ To let bot join to your room. <br/> <br/>
+✍ !!leave ➾ To let bot leave to your room.</p>
+  
+  <center/>
+  <br/> <br/><br/> <br/>
+<a><img src="https://media.discordapp.net/attachments/637671669078425611/640599384937070594/5e61f23786b08fc2691347b2fe9343d4.gif"></a>  
+  <br/>
+  <br/>
+  <hr style="width: 25%; margin-top: -30px; background-color: white;">
+    
+
+
+</div>
+  </div>
+    </div>
+      </div>
+    </div>
+  </main>
+  <div class="row h-100 justify-content-center align-items-center">
+        <form class="col-12 col-lg-7">
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" class="form-control bg-transparent text-light" id="username" placeholder="username" />
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address.</label>
+            <input type="email" class="form-control bg-transparent text-light" id="email" placeholder="example@gmail.com" />
+          </div>
+          <div className="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control bg-transparent text-light" id="password" placeholder="password" />
+          </div>
+          <button type="submit" class="btn btn-secondary mt-3">Submit</button>
+        </form>   
+      </div>
+</div>
+<p>Let this long package float, 
+Goto private class if short.
+While protected with debugger case,  
+Continue volatile interface.
+Instanceof super synchronized throw, 
+Extends final export throws.  
+
+Try import double enum?  
+- False, boolean, abstract function, 
+Implements typeof transient break!
+Void static, default do,  
+Switch int native new. 
+Else, delete null public var 
+In return for const, true, char
+…Finally catch byte.</p>
+
+<script>
+function type(element, text) {
+  if (!text) text = element.innerText;
+  function addText(text, after) {
+    setTimeout(() => {
+      element.innerHTML += text;
+    }, after);
+  }
+  
+  element.innerText = "";
+  var x = 0;
+  for (char of text) {
+    addText(char, 100 * x)
+    x += 1;
+  }
+}
+var paragraph = document.querySelector("p")
+type(paragraph)
+</script>
+
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script>
+    // elements
+var $page = $('.page');
+
+$('.menu_toggle').on('click', function(){
+  $page.toggleClass('shazam');
+});
+$('.content').on('click', function(){
+  $page.removeClass('shazam');
+});
+    
+</script>
+</body>
+</html>
